@@ -2,10 +2,10 @@ class Triangle {
 
   final static float RAD = 15;
 
-  PVector a, b, c;
+  PVector a, b, c; //vertices
   color col;
 
-  boolean main;
+  boolean main; //main triangle or not?
 
   public Triangle(PVector a, PVector b, PVector c, boolean main) {
     this.a = a;
@@ -15,7 +15,7 @@ class Triangle {
     this.main = main;
   }
 
-  //constructor para triangulo equilatero dados dos puntos
+  //generates an equilateral triangle given two points
   public Triangle(PVector a, PVector b) {
     this.a = a;
     this.b = b;
@@ -35,7 +35,6 @@ class Triangle {
     }
 
     stroke(col);
-    //strokeWeight(2);
     noFill();
     beginShape();
     vertex(a.x, a.y);
@@ -45,8 +44,8 @@ class Triangle {
   }
 
   public void calcVertexEqui() {
-    //calcular c
-    PVector m = new PVector((a.x+b.x)/2, (a.y+b.y)/2); //punto medio entre a, b
+    //calc c
+    PVector m = new PVector((a.x+b.x)/2, (a.y+b.y)/2); //midpoint between a and b
     float d = a.dist(b);
     float h = sqrt(d*d - d*d/4);
     PVector dir = new PVector(a.x-b.x, a.y-b.y);

@@ -1,4 +1,6 @@
-Triangle main, ta, tb, tc, cent;
+Triangle main; //main triangle
+Triangle ta, tb, tc; //side equilateral triangles
+Triangle cent; //triangle whose vertices are the centroids of ta, tb and tc
 PVector selectedVertex;
 
 void setup() {
